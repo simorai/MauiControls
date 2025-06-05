@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiControls.Pages.MauiCommandControls"
+             Title="MauiCommandControls">
+    <VerticalStackLayout Margin="10">
+
+        <Button Text="Click here to rotate the text"
+                BackgroundColor="Green"
+                x:Name="btnDemo"
+                Clicked="btnDemo_Clicked"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+
+        <Label x:Name="lblDemo"
+               Text=".NET MAUI"
+               TextColor="Blue"
+               FontSize="25"
+               FontAttributes="Bold"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+
+
+        <Button Text="Click to rotate the text!"
+                BackgroundColor="Green"
+                ImageSource="android.svg"
+                x:Name="btnDemo2"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                IsEnabled="False"
+                Clicked="btnDemo_Clicked"
+                />
+
+        <ImageButton Source="wrench.svg"
+                     x:Name="btnImgDemo"
+                     Aspect="AspectFit"
+                     BorderColor="Black"
+                     Clicked="btnImgDemo_Clicked"
+                     HeightRequest="200"
+                     WidthRequest="200"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"/>
+
+        <!--<StackLayout>
+            <Label Text="What is your favorite animal?"
+                   FontSize="Large" TextColor="Blue"/>
+            <RadioButton Content="Cat"
+                         Value="Cat"
+                         GroupName="Pets"/>
+            <RadioButton Content="Dog"
+                         Value="Dog"
+                         GroupName="Pets" />
+            <RadioButton Content="Cock"
+                         Value="Cock"
+                         IsChecked="True"
+                         GroupName="Pets"/>
+        </StackLayout>-->
+
+        <StackLayout Padding="20"
+                     RadioButtonGroup.GroupName="Pets2">
+            <Label Text="What is your favorite animal? "
+                   FontSize="Large" TextColor="Blue"/>
+            <RadioButton Content="Cat"
+                         Value="Cat"
+                         CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="Dog"
+                         Value="Dog"
+                         CheckedChanged="RadioButton_CheckedChanged"/>
+            <RadioButton Content="Cock"
+                         Value="Cock"
+                         CheckedChanged="RadioButton_CheckedChanged"/>
+            <Label x:Name="lblPets2" Text=""/>
+        </StackLayout>
+
+        <StackLayout>
+            <SearchBar Placeholder="Search product"
+                       BackgroundColor="Cyan"
+                       SearchButtonPressed="SearchBar_SearchButtonPressed"/>
+        </StackLayout>
+
+        <SwipeView BackgroundColor="LightCyan">
+            <SwipeView.LeftItems>
+                <SwipeItems>
+                <SwipeItem BackgroundColor="LightGreen"
+                           IconImageSource="catz.jpg"
+                           Invoked="SwipeItem_Invoked"
+                           Text="Cat"/>
+                <SwipeItem BackgroundColor="LightPink"
+                           IconImageSource="cock.jpg"
+                           Invoked="SwipeItem_Invoked"
+                           Text="Cock"/>
+                </SwipeItems>
+            </SwipeView.LeftItems>
+            <SwipeView.RightItems>
+                <SwipeItem BackgroundColor="LemonChiffon"
+                           IconImageSource="doggo.jpg"
+                           Invoked="SwipeItem_Invoked"
+                           Text="Dog"/>
+            </SwipeView.RightItems>
+            <Grid BackgroundColor="LightGray"
+                  HeightRequest="60"
+                  WidthRequest="300">
+                <Label HorizontalOptions="Center"
+                       Text="Empty&lt;== Slide ==>"
+                       FontSize="Large"
+                       VerticalOptions="Center"/>
+
+            </Grid>
+        </SwipeView>
+
+
+    </VerticalStackLayout>
+</ContentPage>
